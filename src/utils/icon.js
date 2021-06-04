@@ -1,0 +1,1 @@
+export const iconUrl = '//at.alicdn.com/t/font_2454205_vvvv3mquog.js'

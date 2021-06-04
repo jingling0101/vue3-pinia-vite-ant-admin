@@ -1,0 +1,43 @@
+{
+  "name": "vue3-pinia-vite-ant-admin",
+  "version": "1.0.0",
+  "license": "MIT",
+  "keywords": [],
+  "authors": [
+    {
+      "name": "jingling0101",
+      "email": ""
+    }
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "elt": "eslint --config .eslintrc.json --ext .js,.ts,vue src/** --no-error-on-unmatched-pattern",
+    "elt-fix": "eslint --config .eslintrc.json --fix --ext .js,.ts,vue src/** --no-error-on-unmatched-pattern"
+  },
+  "lint-staged": {
+    "*.{ts,vue}": "eslint --fix"
+  },
+  "dependencies": {
+    "ant-design-vue": "2.1.2",
+    "axios": "^0.21.1",
+    "pinia": "^2.0.0-alpha.13",
+    "vue": "3.0.5",
+    "vue-router": "^4.0.8"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.24.0",
+    "@typescript-eslint/parser": "^4.24.0",
+    "@vitejs/plugin-vue": "^1.2.1",
+    "@vue/compiler-sfc": "3.0.5",
+    "@vue/eslint-config-typescript": "^7.0.0",
+    "eslint": "^7.26.0",
+    "eslint-plugin-vue": "^7.9.0",
+    "less": "^4.1.1",
+    "mockjs": "^1.1.0",
+    "typescript": "^4.2.4",
+    "vite": "^2.1.5",
+    "vite-plugin-importer": "^0.2.1"
+  }
+}

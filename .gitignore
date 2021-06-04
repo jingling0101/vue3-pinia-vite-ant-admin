@@ -1,0 +1,25 @@
+node_modules
+.DS_Store
+.vscode
+dist
+dist-ssr
+*.local
+# local env files
+.env
+.env.production
+.env.local
+.env.*.local
+
+cypress
+.idea
+.git
+.env
+.env.production
+.eslintrc.js
+package-lock.json
+yarn.lock
+yarn-error.log
+tests/e2e/fixtures
+tests/e2e/plugins
+tests/e2e/support
+tests/e2e/videos
