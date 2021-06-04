@@ -50,14 +50,12 @@ ant-design-vue2.1.2以上版本有bug，所以目前用2.1.2，vue3版本3.0.5
       - layout-tabs
     - router
     - store
-      - modules
     - utils
     - views
       - error
       - form
       - index
       - login
-      - redirect
       - tables
 
 ```
