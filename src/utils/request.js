@@ -2,7 +2,7 @@ import axios from 'axios'
 import {message} from 'ant-design-vue'
 
 import {httpCodeSuccess, timeOut, tokenIllegal, tokenLogged, tokenExpired} from '@/config/code'
-import {hostUrl} from "@/config/url";
+import {hostUrl} from '@/config/url'
 
 const service = axios.create({
     bas1eURL: hostUrl.baseURL,

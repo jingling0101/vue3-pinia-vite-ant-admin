@@ -5,8 +5,8 @@ const Login = () => import('@/views/login/login.vue')
 const Index = () => import('@/views/index/index.vue')
 
 const Form = () => import('@/views/form/form.vue')
-const Table1 = () => import("@/views/tables/table1.vue")
-const Table2 = () => import("@/views/tables/table2.vue")
+const Table1 = () => import('@/views/tables/table1.vue')
+const Table2 = () => import('@/views/tables/table2.vue')
 
 const Forbidden = () => import('@/views/error/403.vue')
 const NotFound = () => import('@/views/error/404.vue')
@@ -44,32 +44,32 @@ export const constantRoutes = [
         ]
     },
     {
-        path: "/table-dome",
-        name: "table-dome",
+        path: '/table-dome',
+        name: 'table-dome',
         component: Layout,
-        redirect: "",
+        redirect: '',
         meta: {
-            title: "table",
-            icon: "icon-table"
+            title: 'table',
+            icon: 'icon-table'
         },
         children: [
             {
-                path: "/table",
-                name: "table",
+                path: '/table',
+                name: 'table',
                 component: Table1,
                 meta: {
-                    title: "表格1",
-                    icon: "icon-table",
+                    title: '表格1',
+                    icon: 'icon-table',
                     affix: true
                 }
             },
             {
-                path: "/table2",
-                name: "table2",
+                path: '/table2',
+                name: 'table2',
                 component: Table2,
                 meta: {
-                    title: "表格2",
-                    icon: "icon-table",
+                    title: '表格2',
+                    icon: 'icon-table',
                     affix: true
                 }
             }
@@ -77,34 +77,34 @@ export const constantRoutes = [
     },
 
     {
-        path: "/error",
+        path: '/error',
         component: Layout,
-        name: "error",
-        redirect: "/403",
+        name: 'error',
+        redirect: '/403',
         meta: {
-            title: "error",
-            icon: "icon-error",
+            title: 'error',
+            icon: 'icon-error',
         },
         hidden: true,
         children: [
             {
-                path: "/403",
-                name: "forbidden",
-                redirect: "",
+                path: '/403',
+                name: 'forbidden',
+                redirect: '',
                 meta: {
-                    title: "403",
-                    icon: "icon-error",
+                    title: '403',
+                    icon: 'icon-error',
                 },
                 hidden: true,
                 component: Forbidden
             },
             {
-                path: "/404",
-                name: "not-found",
-                redirect: "",
+                path: '/404',
+                name: 'not-found',
+                redirect: '',
                 meta: {
-                    title: "404",
-                    icon: "icon-error",
+                    title: '404',
+                    icon: 'icon-error',
                 },
                 hidden: true,
                 component: NotFound
