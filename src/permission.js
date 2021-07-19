@@ -9,16 +9,17 @@ const numN1 = -1
 
 
 router.beforeEach(async (to, from, next) => {
-    const token = localStorage.getItem('admin-token')
-    // console.log(token)
+
 
     const auth = useAuthStore()
     const menu = useAsyncRouterStore()
+    let token = auth.getAdminToken || localStorage.getItem('admin-token')
     if (token) {
 
         // 判断是否有token
         if (to.path === '/login') {
-            next({path: '/'})
+            // next({path: '/'})
+            next();
         } else {
             const hasRoles = auth.getAdminRoles && auth.getAdminRoles.length > num0
             const hasMenuAsync = menu.getMenuAsync && menu.getMenuAsync.length > num0
@@ -29,9 +30,12 @@ router.beforeEach(async (to, from, next) => {
                 next()
             } else {
 
-                const result = await auth[ADMIN_INFO_RESULT](token)
+                token = localStorage.getItem('admin-token')
+                const result = await auth[ADMIN_INFO_RESULT](token).catch((err) => {
+                    next('/login')
+                    return false
+                })
                 const {roles} = result.data
-
                 const accessRouters = await menu[MENUS_GENERATE](roles)
 
                 // console.log(router)

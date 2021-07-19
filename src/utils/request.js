@@ -1,22 +1,21 @@
 import axios from 'axios'
 import {message} from 'ant-design-vue'
 
-import {httpCodeSuccess, timeOut, tokenIllegal, tokenLogged, tokenExpired} from '@/utils/code'
-
+import {httpCodeSuccess, timeOut, tokenIllegal, tokenLogged, tokenExpired} from '@/config/code'
+import {hostUrl} from "@/config/url";
 
 const service = axios.create({
-    bas1eURL: '/api/',
+    bas1eURL: hostUrl.baseURL,
     timeout: timeOut
 })
 
-const token = localStorage.getItem('admin-token')
 
 //
 service.interceptors.request.use(
     config => {
-        if (token) {
+        if (localStorage.getItem('admin-token')) {
             // ['X-Token'] is a custom headers key
-            config.headers['X-Token'] = token
+            config.headers['X-Token'] = localStorage.getItem('admin-token')
         }
         return config
     },

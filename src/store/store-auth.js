@@ -6,7 +6,7 @@ import {
 } from '@/store/actions-types'
 import router, {asyncRoutes} from '@/router'
 
-import {httpCodeSuccess} from '@/utils/code'
+import {httpCodeSuccess} from '@/config/code'
 
 export const useAuthStore = defineStore({
     id: 'auth',

@@ -40,7 +40,7 @@
     import {
         ADMIN_LOGIN_RESULT, ADMIN_INFO_RESULT, MENUS_GENERATE
     } from '@/store/actions-types'
-    import {httpCodeSuccess} from '@/utils/code'
+    import {httpCodeSuccess} from '@/config/code'
 
     let username = ref('admin')
     let password = ref('123456')
@@ -59,9 +59,8 @@
         }
         const auth = useAuthStore()
         const res = await auth[ADMIN_LOGIN_RESULT](form)
-        console.log(res)
 
-        console.log(route)
+        // localStorage.setItem('admin-token', res.token)
         if (res.code === httpCodeSuccess) {
             const toPath = decodeURIComponent(route.query?.redirect || '/')
             message.success('登录成功！')
